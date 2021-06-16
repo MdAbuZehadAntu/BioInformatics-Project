@@ -7,11 +7,10 @@ alphabet_set = 'ATCG'  # for DNA
 
 
 # random DNA sequence generation
-def seq_gen(length, seq_num):
-    for i in range(seq_num):
-        DNA = ""
-        for count in range(length):
-            DNA += choice(alphabet_set)
+def seq_gen(length):
+    DNA = ""
+    for count in range(length):
+        DNA += choice(alphabet_set)
 
     return DNA
 
@@ -61,4 +60,12 @@ def S_generation(B, edit_op):
             edit_op[i]['index'] = index
             s_list.append(s)
 
-    return s_list,edit_op
+    return s_list, edit_op
+
+
+def op_ind(edit_operation):
+    operated_index = {}
+    for i in edit_operation:
+        operated_index[i] = (edit_operation[i]['index'])
+
+    return operated_index
